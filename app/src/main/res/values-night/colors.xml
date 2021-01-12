@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#263238</color>
+    <color name="colorPrimaryDark">#000a12</color>
+    <color name="colorLight">#4f5b62</color>
+    <color name="colorText">#fafafa</color>
+    <color name="colorShimmer">#455a64</color>
+
+    <color name="colorTextPrimary">#cbd5ed</color>
+    <color name="colorTextSecondary">#4a5b82</color>
+    <color name="colorTextOther">#fad303</color>
+    <color name="colorThemeExtra">#ff5252</color>
+
+    <color name="ColorBottomNavigationSelectorTrue">#1E88E5</color>
+    <color name="ColorBottomNavigationSelectorFalse">#fafafa</color>
+
+</resources>
