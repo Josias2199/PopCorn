@@ -22,7 +22,7 @@ class FavoritesFragment : Fragment(), FavoritesListener {
     private lateinit var binding: FragmentFavoritesBinding
     private lateinit var viewModel: FavoritesViewModel
     private lateinit var adapter: FavoritesListAdapter
-    private var favoritesList: MutableList<TVShow> = mutableListOf<TVShow>()
+    private lateinit var favoritesList: MutableList<TVShow>
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -35,6 +35,7 @@ class FavoritesFragment : Fragment(), FavoritesListener {
     }
 
     private fun doInitialization() {
+        favoritesList = mutableListOf()
         viewModel = ViewModelProvider(this).get(FavoritesViewModel::class.java)
         binding.ivBack.setOnClickListener {
             it.findNavController().popBackStack()
@@ -55,7 +56,7 @@ class FavoritesFragment : Fragment(), FavoritesListener {
                     favoritesList.clear()
                 }
                 favoritesList.addAll(it)
-                adapter = FavoritesListAdapter(it, this)
+                adapter = FavoritesListAdapter(favoritesList, this)
                 binding.rvFavorites.adapter = adapter
                 binding.rvFavorites.visibility = View.VISIBLE
                 compositeDisposable.dispose()
@@ -73,7 +74,7 @@ class FavoritesFragment : Fragment(), FavoritesListener {
 
 
     override fun removeTVShowFromFavoritesList(tvShow: TVShow, position: Int) {
-        val compositeDisposableForDelete: CompositeDisposable = CompositeDisposable()
+        val compositeDisposableForDelete = CompositeDisposable()
         compositeDisposableForDelete.add(viewModel.removeTVShowFromFavorites(tvShow)
             .subscribeOn(Schedulers.computation())
             .observeOn(AndroidSchedulers.mainThread())

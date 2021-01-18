@@ -39,6 +39,7 @@
                 android:layout_marginStart="@dimen/_8sdp"
                 android:layout_marginEnd="@dimen/_8sdp"
                 android:layout_weight="1"
+                android:gravity="center"
                 android:ellipsize="end"
                 android:maxLines="1"
                 android:textColor="@color/colorText"
@@ -46,25 +47,6 @@
                 android:textSize="@dimen/_14ssp"
                 android:textStyle="bold" />
 
-            <ImageView
-                android:id="@+id/img_watchlist"
-                android:layout_width="@dimen/_24sdp"
-                android:layout_height="@dimen/_24sdp"
-                android:layout_marginEnd="@dimen/_8sdp"
-                android:contentDescription="@string/app_name"
-                android:padding="@dimen/_2sdp"
-                android:src="@drawable/ic_watchlist"
-                app:tint="@color/colorText" />
-
-            <ImageView
-                android:id="@+id/img_search"
-                android:layout_width="@dimen/_24sdp"
-                android:layout_height="@dimen/_24sdp"
-                android:layout_marginEnd="@dimen/_8sdp"
-                android:contentDescription="@string/app_name"
-                android:padding="@dimen/_2sdp"
-                android:src="@drawable/ic_search"
-                app:tint="@color/colorText" />
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView

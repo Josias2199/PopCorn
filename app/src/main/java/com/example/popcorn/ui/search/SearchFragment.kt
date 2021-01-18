@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.popcorn.data.local.entity.TVShow
 import com.example.popcorn.databinding.FragmentDashboardBinding
 import com.example.popcorn.ui.home.principal.TVShowAdapter
+import com.example.popcorn.utilities.TempDataHolder
 import java.util.*
 
 class SearchFragment : Fragment() {
@@ -27,7 +28,7 @@ class SearchFragment : Fragment() {
     private lateinit var adapter: TVShowAdapter
     private var currentPage: Int = 1
     private var totalAvailablePages: Int = 1
-    private var timer: Timer? = null
+    private var timer: Timer = Timer()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -42,32 +43,33 @@ class SearchFragment : Fragment() {
     }
 
     private fun doInitialization() {
+        TempDataHolder.MOVE_FRAGMENT = false
         binding.ivBack.setOnClickListener {
             it.findNavController().popBackStack()
         }
         binding.rvTVShows.setHasFixedSize(true)
-        viewModel =
-            ViewModelProvider(this).get(SearchViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(SearchViewModel::class.java)
         adapter = TVShowAdapter(tvShows)
         binding.rvTVShows.adapter = adapter
         binding.etSearch.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(charSecuence: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            override fun beforeTextChanged(charSecuence: CharSequence, p1: Int, p2: Int, p3: Int) {
 
             }
 
-            override fun onTextChanged(charSecuence: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                timer?.let {
-                    timer!!.cancel()
+            override fun onTextChanged(charSecuence: CharSequence, p1: Int, p2: Int, p3: Int) {
+                if (timer != null) {
+                    timer.cancel()
                 }
             }
 
-            override fun afterTextChanged(editable: Editable?) {
-                if (editable.toString().trim().isEmpty()) {
+            override fun afterTextChanged(editable: Editable) {
+                if (editable.toString().trim().isNotEmpty()) {
                     timer = Timer()
-                    timer?.let {
-                        timer!!.schedule(object : TimerTask() {
+                    //timer?.let {
+                    timer.schedule(object : TimerTask() {
                         override fun run() {
-                            Handler(Looper.getMainLooper()).post {
+                            val handler = Handler(Looper.getMainLooper())
+                            handler.post {
                                 currentPage = 1
                                 totalAvailablePages = 1
                                 searchTVShow(editable.toString())
@@ -75,7 +77,7 @@ class SearchFragment : Fragment() {
                         }
 
                     }, 800)
-                }
+                    //}
                 } else {
                     tvShows.clear()
                     adapter.notifyDataSetChanged()
@@ -105,9 +107,9 @@ class SearchFragment : Fragment() {
             toggleLoading()
             if (it != null) {
                 totalAvailablePages = it.pages
-                it.TVShows.let { listTVShow ->
+                if(it.TVShows != null) {
                     val oldCount = tvShows.size
-                    tvShows.addAll(listTVShow)
+                    tvShows.addAll(it.TVShows)
                     adapter.notifyItemRangeInserted(oldCount, tvShows.size)
                 }
             }
