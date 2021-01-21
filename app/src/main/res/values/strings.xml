@@ -14,4 +14,17 @@
     <string name="episodes">Episodes</string>
     <string name="favorites">Favorites</string>
     <string name="search_tv_show">Seacrh TV Show</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="don_t_have_an_account_register_now">Don\'t have an account? <u>Register now</u></string>
+    <string name="full_name">Full Name</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="sign_up">sign up</string>
 </resources>

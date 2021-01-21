@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    tools:context=".ui.cleanfirestorelogin.presentation.register.view.SignUpActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/GuideLine"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".45"/>
+
+    <TextView
+        android:id="@+id/txt_welcome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_24sdp"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:text="@string/welcome"
+        android:textColor="@color/colorText"
+        android:textSize="@dimen/_24sdp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/etxt_fullName"
+        app:layout_constraintEnd_toEndOf="@+id/etxt_fullName"
+        app:layout_constraintStart_toStartOf="@+id/etxt_fullName" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etxt_fullName"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_8sdp"
+        android:layout_marginBottom="@dimen/_8sdp"
+        android:hint="@string/full_name"
+        app:layout_constraintBottom_toTopOf="@+id/etxt_email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:startIconDrawable="@drawable/ic_person"
+        app:startIconTint="@color/colorText">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:textColor="@color/colorText" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etxt_email"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_8sdp"
+        android:hint="@string/prompt_email"
+        app:layout_constraintBottom_toTopOf="@+id/GuideLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:startIconDrawable="@drawable/ic_email"
+        app:startIconTint="@color/colorText">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/colorText" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etxt_password"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/prompt_password"
+        app:layout_constraintEnd_toEndOf="@+id/etxt_email"
+        app:layout_constraintStart_toStartOf="@+id/etxt_email"
+        app:layout_constraintTop_toBottomOf="@+id/etxt_email"
+        app:startIconDrawable="@drawable/ic_password"
+        app:startIconTint="@color/colorText"
+        app:endIconMode="password_toggle"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginHorizontal="@dimen/_8sdp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:textColor="@color/colorText" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/etxt_confirm_password"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/confirm_password"
+        app:layout_constraintEnd_toEndOf="@+id/etxt_password"
+        app:layout_constraintStart_toStartOf="@+id/etxt_password"
+        app:layout_constraintTop_toBottomOf="@+id/etxt_password"
+        app:startIconDrawable="@drawable/ic_password"
+        app:startIconTint="@color/colorText"
+        app:endIconMode="password_toggle"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginHorizontal="@dimen/_8sdp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:textColor="@color/colorText" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btn_signUp"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:text="@string/sign_up"
+        app:layout_constraintEnd_toEndOf="@+id/etxt_confirm_password"
+        app:layout_constraintStart_toStartOf="@+id/etxt_confirm_password"
+        app:layout_constraintTop_toBottomOf="@+id/etxt_confirm_password" />
+
+
+    <ProgressBar
+        android:id="@+id/progressBar_signUp"
+        android:layout_width="@dimen/_24sdp"
+        android:layout_height="@dimen/_24sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/btn_signUp"
+        app:layout_constraintStart_toStartOf="@+id/btn_signUp"
+        app:layout_constraintTop_toBottomOf="@+id/btn_signUp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

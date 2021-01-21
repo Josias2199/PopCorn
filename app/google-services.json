@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "370475192328",
+    "project_id": "fir-popcorn",
+    "storage_bucket": "fir-popcorn.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:370475192328:android:71cb6f4882574e705c81bd",
+        "android_client_info": {
+          "package_name": "com.example.popcorn"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "370475192328-1hichd5a17p02u1cmtoc7p3v13eajj5r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlZi2jUitfnzyGIr3lklOj74xFIv6QNS4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "370475192328-1hichd5a17p02u1cmtoc7p3v13eajj5r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

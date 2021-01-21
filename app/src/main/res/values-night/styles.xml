@@ -10,4 +10,8 @@
         <item name="android:forceDarkAllowed">false</item>
     </style>
 
+    <style name="SplashScreen" parent="AppTheme">
+
+    </style>
+
 </resources>
