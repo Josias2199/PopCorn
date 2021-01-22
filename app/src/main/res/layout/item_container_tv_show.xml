@@ -12,20 +12,21 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/secondaryColor"
         android:layout_margin="@dimen/_4sdp">
 
         <View
             android:id="@+id/viewSupporter"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_10sdp"
+            android:background="@color/secondaryLightColor"
             app:layout_constraintTop_toBottomOf="@id/iv_tvShow" />
 
         <View
             android:id="@+id/viewBackground"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:background="@drawable/background_tv_show"
-            android:alpha="0.3"
+            android:background="@color/secondaryLightColor"
             android:paddingBottom="@dimen/_10sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toTopOf="@id/tv_showName" />
@@ -50,7 +51,7 @@
             android:layout_marginEnd="@dimen/_8sdp"
             android:includeFontPadding="false"
             android:paddingTop="@dimen/_8sdp"
-            android:textColor="@color/colorTextPrimary"
+            android:textColor="@color/primaryTextColor"
             android:textSize="@dimen/_13ssp"
             android:text="@{tvShow.name}"
             app:layout_constraintEnd_toEndOf="parent"

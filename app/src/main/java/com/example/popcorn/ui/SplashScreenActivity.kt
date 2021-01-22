@@ -15,9 +15,8 @@ class SplashScreenActivity : AppCompatActivity() {
         supportActionBar?.hide()
 
         iv_splash.alpha = 0f
-        tv_splash.alpha = 0f
-        iv_splash.animate().setDuration(1500).alpha(1f)
-        tv_splash.animate().setDuration(1500).alpha(1f).withEndAction {
+
+        iv_splash.animate().setDuration(1500).alpha(1f).withEndAction {
             val intent = Intent(this, SignInActivity::class.java)
             startActivity(intent)
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)

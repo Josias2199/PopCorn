@@ -15,7 +15,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/gradient_background"
+        android:background="@color/secondaryLightColor"
         tools:context=".ui.favorites.FavoritesFragment">
 
         <LinearLayout
@@ -23,7 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="?actionBarSize"
             android:layout_marginTop="25dp"
-            android:background="@drawable/transparent_background"
+            android:background="@color/secondaryLightColor"
             android:gravity="center_vertical"
             android:orientation="horizontal"
             android:padding="@dimen/_8sdp"
@@ -35,7 +35,7 @@
                 android:layout_height="@dimen/_24sdp"
                 android:contentDescription="@string/app_name"
                 android:src="@drawable/ic_back"
-                app:tint="@color/colorText"/>
+                app:tint="@color/primaryTextColor"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -46,7 +46,7 @@
                 android:includeFontPadding="false"
                 android:maxLines="1"
                 android:text="@string/favorites"
-                android:textColor="@color/colorText"
+                android:textColor="@color/primaryTextColor"
                 android:textSize="@dimen/_14ssp"/>
 
         </LinearLayout>
@@ -55,6 +55,7 @@
             android:id="@+id/rvFavorites"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:background="@color/secondaryColor"
             android:paddingBottom="@dimen/_50sdp"
             android:clipToPadding="false"
             android:orientation="vertical"

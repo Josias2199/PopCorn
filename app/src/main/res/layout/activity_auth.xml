@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_background"
+    android:background="@color/secondaryLightColor"
     tools:context=".ui.cleanfirestorelogin.presentation.login.view.SignInActivity">
 
     <androidx.constraintlayout.widget.Guideline
@@ -14,16 +14,19 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent=".45"/>
 
-    <ImageView
-        android:layout_width="@dimen/_100sdp"
-        android:layout_height="@dimen/_100sdp"
-        android:contentDescription="@string/app_name"
-        android:src="@drawable/ic_cine"
-        app:layout_constraintBottom_toTopOf="@+id/txt_welcome"
-        app:layout_constraintEnd_toEndOf="@+id/txt_welcome"
-        app:layout_constraintStart_toStartOf="@+id/txt_welcome"
-        app:tint="@color/colorText"
-        android:layout_marginBottom="@dimen/_8sdp"/>
+    <ProgressBar
+        android:id="@+id/progressBar_signIn"
+        style="?android:progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/primaryColor"
+        android:progressTint="@color/primaryColor"
+        android:visibility="gone"
+        android:secondaryProgressTint="@color/primaryLightColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txt_welcome"
@@ -32,8 +35,9 @@
         android:layout_marginBottom="@dimen/_24sdp"
         android:gravity="center"
         android:includeFontPadding="false"
+        android:textColor="@color/primaryTextColor"
         android:text="@string/welcome"
-        android:textColor="@color/colorText"
+
         android:textSize="@dimen/_24sdp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/etxt_email"
@@ -51,13 +55,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:startIconDrawable="@drawable/ic_user"
-        app:startIconTint="@color/colorText">
+        app:startIconTint="@color/primaryTextColor">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
-            android:textColor="@color/colorText" />
+
+             />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -71,10 +76,9 @@
         app:layout_constraintStart_toStartOf="@+id/etxt_email"
         app:layout_constraintTop_toBottomOf="@+id/etxt_email"
         app:startIconDrawable="@drawable/ic_password"
-        app:startIconTint="@color/colorText"
+        app:startIconTint="@color/primaryTextColor"
         app:endIconMode="password_toggle"
-
-
+        app:endIconTint="@color/primaryTextColor"
         android:layout_marginTop="@dimen/_8sdp"
         android:layout_marginHorizontal="@dimen/_8sdp">
 
@@ -82,9 +86,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
-            android:textColor="@color/colorText" />
+            android:imeOptions="actionDone"/>
 
     </com.google.android.material.textfield.TextInputLayout>
+
+    <!--android:textColor="@color/colorText"-->
 
     <Button
         android:id="@+id/btn_signIn"
@@ -96,7 +102,9 @@
         android:text="@string/action_sign_in_short"
         app:layout_constraintEnd_toEndOf="@+id/etxt_password"
         app:layout_constraintStart_toStartOf="@+id/etxt_password"
-        app:layout_constraintTop_toBottomOf="@+id/etxt_password" />
+        app:layout_constraintTop_toBottomOf="@+id/etxt_password"
+        android:imeOptions="actionDone"
+        />
 
     <TextView
         android:id="@+id/etxt_register"
@@ -106,14 +114,14 @@
         android:layout_marginHorizontal="@dimen/_8sdp"
         android:gravity="center"
         android:text="@string/don_t_have_an_account_register_now"
-        android:textColor="@color/colorText"
+        android:textColor="@color/primaryDarkColor"
         android:textSize="@dimen/_11ssp"
 
         app:layout_constraintEnd_toEndOf="@+id/btn_signIn"
         app:layout_constraintStart_toStartOf="@+id/btn_signIn"
         app:layout_constraintTop_toBottomOf="@+id/btn_signIn" />
 
-    <ProgressBar
+    <!--<ProgressBar
         android:id="@+id/progressBar_signIn"
         android:layout_width="@dimen/_24sdp"
         android:layout_height="@dimen/_24sdp"
@@ -121,7 +129,7 @@
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="@+id/etxt_register"
         app:layout_constraintStart_toStartOf="@+id/etxt_register"
-        app:layout_constraintTop_toBottomOf="@+id/etxt_register" />
+        app:layout_constraintTop_toBottomOf="@+id/etxt_register" />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

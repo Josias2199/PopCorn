@@ -30,7 +30,7 @@ class SignInActivity : BaseActivity(), SignInContract.LoginView {
 
     override fun getLayout(): Int = R.layout.activity_auth
 
-    override fun showError(msgError: String) {
+    override fun showError(msgError: String?) {
         toast(this, msgError)
     }
 
@@ -46,8 +46,9 @@ class SignInActivity : BaseActivity(), SignInContract.LoginView {
         val email = etxt_email.editText?.text.toString().trim()
         val password = etxt_password.editText?.text.toString().trim()
         if(presenter.checkEmptyFields(email, password))
+            toast(this, "Empty fields")
+        else
             presenter.signInUserWithUserAndPassword(email, password)
-
     }
 
     override fun navigateToMain() {

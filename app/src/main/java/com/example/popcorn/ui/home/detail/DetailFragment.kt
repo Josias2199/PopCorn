@@ -176,7 +176,7 @@ class DetailFragment : Fragment() {
         binding.sliderViewPager.offscreenPageLimit = 1
         binding.sliderViewPager.adapter = ImageSliderAdapter(sliderImages)
         binding.sliderViewPager.visibility = View.VISIBLE
-        binding.viewFadingEdge.visibility = View.VISIBLE
+        //binding.viewFadingEdge.visibility = View.VISIBLE
         setupSliderIndicators(sliderImages.size)
         binding.sliderViewPager.registerOnPageChangeCallback(object :
             ViewPager2.OnPageChangeCallback() {

@@ -27,4 +27,7 @@
     <string name="full_name">Full Name</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="sign_up">sign up</string>
+    <string name="hi">Hi !</string>
+    <string name="series">Series</string>
+    <string name="search">Search</string>
 </resources>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_background"
+    android:background="@color/secondaryLightColor"
     tools:context=".ui.cleanfirestorelogin.presentation.register.view.SignUpActivity">
 
     <androidx.constraintlayout.widget.Guideline
@@ -21,8 +21,8 @@
         android:layout_marginBottom="@dimen/_24sdp"
         android:gravity="center"
         android:includeFontPadding="false"
-        android:text="@string/welcome"
-        android:textColor="@color/colorText"
+        android:text="@string/hi"
+        android:textColor="@color/primaryTextColor"
         android:textSize="@dimen/_24sdp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/etxt_fullName"
@@ -41,13 +41,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:startIconDrawable="@drawable/ic_person"
-        app:startIconTint="@color/colorText">
+        app:startIconTint="@color/primaryTextColor">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:textColor="@color/colorText" />
+            android:textColor="@color/primaryTextColor" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -62,13 +62,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:startIconDrawable="@drawable/ic_email"
-        app:startIconTint="@color/colorText">
+        app:startIconTint="@color/primaryTextColor">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
-            android:textColor="@color/colorText" />
+            android:textColor="@color/primaryTextColor" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -82,8 +82,9 @@
         app:layout_constraintStart_toStartOf="@+id/etxt_email"
         app:layout_constraintTop_toBottomOf="@+id/etxt_email"
         app:startIconDrawable="@drawable/ic_password"
-        app:startIconTint="@color/colorText"
+        app:startIconTint="@color/primaryTextColor"
         app:endIconMode="password_toggle"
+        app:endIconTint="@color/primaryTextColor"
         android:layout_marginTop="@dimen/_8sdp"
         android:layout_marginHorizontal="@dimen/_8sdp">
 
@@ -91,7 +92,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
-            android:textColor="@color/colorText" />
+            android:textColor="@color/primaryTextColor" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -104,7 +105,8 @@
         app:layout_constraintStart_toStartOf="@+id/etxt_password"
         app:layout_constraintTop_toBottomOf="@+id/etxt_password"
         app:startIconDrawable="@drawable/ic_password"
-        app:startIconTint="@color/colorText"
+        app:startIconTint="@color/primaryTextColor"
+        app:endIconTint="@color/primaryTextColor"
         app:endIconMode="password_toggle"
         android:layout_marginTop="@dimen/_8sdp"
         android:layout_marginHorizontal="@dimen/_8sdp">
@@ -113,7 +115,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
-            android:textColor="@color/colorText" />
+            android:textColor="@color/primaryTextColor" />
 
     </com.google.android.material.textfield.TextInputLayout>
 

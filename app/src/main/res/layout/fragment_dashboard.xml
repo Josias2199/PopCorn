@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:animateLayoutChanges="true"
-        android:background="@drawable/gradient_background"
+        android:background="@color/secondaryLightColor"
         tools:context=".ui.search.SearchFragment">
 
         <LinearLayout
@@ -27,8 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="?actionBarSize"
             android:layout_marginTop="25dp"
-
-            android:background="@drawable/transparent_background"
+            android:background="@color/secondaryLightColor"
             android:gravity="center_vertical"
             android:orientation="horizontal"
             android:padding="@dimen/_8sdp"
@@ -40,7 +39,7 @@
                 android:layout_height="@dimen/_24sdp"
                 android:src="@drawable/ic_back"
                 android:contentDescription="@string/app_name"
-                app:tint="@color/colorText"/>
+                app:tint="@color/primaryTextColor"/>
 
             <EditText
                 android:id="@+id/etSearch"
@@ -52,7 +51,7 @@
                 android:background="@null"
                 android:hint="@string/search_tv_show"
                 android:imeOptions="actionDone"
-                android:textColorHint="@color/colorTextSecondary"
+                android:textColorHint="@color/secondaryDarkColor"
                 android:importantForAutofill="no"
                 android:includeFontPadding="false"
                 android:inputType="text"
@@ -65,7 +64,7 @@
                 android:contentDescription="@string/app_name"
                 android:padding="@dimen/_2sdp"
                 android:src="@drawable/ic_search"
-                app:tint="@color/colorText" />
+                app:tint="@color/primaryTextColor" />
 
         </LinearLayout>
 

@@ -20,6 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:animateLayoutChanges="true"
+        android:background="@color/secondaryLightColor"
         tools:context=".ui.home.principal.PrincipalFragment">
 
         <LinearLayout
@@ -27,7 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="?actionBarSize"
             android:layout_marginTop="25dp"
-            android:background="@drawable/transparent_background"
+            android:background="@color/secondaryLightColor"
             android:gravity="center"
             android:orientation="horizontal"
             android:padding="@dimen/_8sdp"
@@ -42,7 +43,7 @@
                 android:gravity="center"
                 android:ellipsize="end"
                 android:maxLines="1"
-                android:textColor="@color/colorText"
+                android:textColor="@color/primaryTextColor"
                 android:text="@string/tv_shows_most_popular"
                 android:textSize="@dimen/_14ssp"
                 android:textStyle="bold" />
@@ -54,11 +55,12 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:clipToPadding="false"
+            android:background="@color/secondaryColor"
             android:orientation="vertical"
             android:paddingTop="@dimen/_4sdp"
             android:paddingStart="@dimen/_4sdp"
             android:paddingEnd="@dimen/_4sdp"
-            android:paddingBottom="@dimen/_90sdp"
+            android:paddingBottom="@dimen/_45sdp"
             tools:listitem="@layout/item_container_tv_show"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -68,6 +70,7 @@
             android:layout_width="@dimen/_25sdp"
             android:layout_height="@dimen/_25sdp"
             android:visibility="@{isLoading ? View.VISIBLE : View.GONE, default=gone}"
+            android:indeterminateTint="@color/primaryColor"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/rv_tvShows"
             app:layout_constraintStart_toStartOf="@+id/rv_tvShows"
@@ -76,10 +79,11 @@
         <ProgressBar
             android:layout_width="@dimen/_25sdp"
             android:layout_height="@dimen/_25sdp"
-            android:layout_marginBottom="@dimen/_60sdp"
+            android:layout_marginBottom="@dimen/_12sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            android:indeterminateTint="@color/primaryColor"
             android:visibility="@{isLoadingMore ? View.VISIBLE : View.GONE, default=visible}"
             />
 

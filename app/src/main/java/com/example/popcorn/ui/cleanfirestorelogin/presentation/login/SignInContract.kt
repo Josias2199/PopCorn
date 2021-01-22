@@ -2,7 +2,7 @@ package com.example.popcorn.ui.cleanfirestorelogin.presentation.login
 
 interface SignInContract {
     interface LoginView{
-        fun showError(msgError: String)
+        fun showError(msgError: String?)
         fun showProgressBar()
         fun hideProgressBar()
         fun signIn()
